@@ -1,5 +1,7 @@
 package com.conneqtor.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +18,12 @@ import com.google.gson.Gson;
 
 
 @RestController
-@RequestMapping("/createNewUser")
-public class CreateNewUserRestController {
+public class UserRestController {
 	
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(method=RequestMethod.POST, value="/createNewUser")
 	public @ResponseBody Boolean createNewUser_JSON(@RequestBody String newUserJson, HttpSession session, ModelMap modelMap){
 		System.out.println("rest controller hit");
 		System.out.println(newUserJson);
@@ -32,6 +33,14 @@ public class CreateNewUserRestController {
 		boolean result = userService.updateUser(newUser);
 		
 		return true;
+	}
+	@RequestMapping(method=RequestMethod.GET, value="/getAllUsers")
+	public @ResponseBody List<User> getAllUsers_JSON(){
+		System.out.println("GET rest controller hit");
+
+		List<User> users = userService.getAllUsers();
+		
+		return users;
 	}
 
 }

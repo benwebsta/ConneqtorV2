@@ -1,5 +1,7 @@
 package com.conneqtor.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.conneqtor.beans.User;
@@ -14,6 +16,11 @@ public class UserService {
 		System.out.println("in service");
 		System.out.println(user);
 		return userDao.updateUser(user);
+	}
+	
+	public List<User> getAllUsers(){
+		List<User> users = userDao.getAllUsers();
+		return users;
 	}
 
 }

@@ -23,7 +23,7 @@
 	
 	<!-- Scripts -->
 	<script src="resources/js/app.js"></script>
-	<script src="resources/js/createNewUserController.js"></script>
+	<script src="resources/js/UserController.js"></script>
 	
 	<!-- CSS for our pages -->
 	<link rel="stylesheet" src="resources/css/home.css"></script>
@@ -33,15 +33,17 @@
 	<!-- <link rel="stylesheet" href="bower_components/angular-bootstrap-simple-chat/src/css/themes.css"> -->
 	<title>Insert title here</title>
 </head>
-<body ng-app="conneqtor2" ng-controller="createNewUserController">
+<body ng-app="conneqtor2" ng-controller="UserController">
 <h2>{{user.userId}}</h2>
 <h2>{{user.firstName}}</h2>
 <h2>{{user.lastName}}</h2>
 <h2>{{user.email}}</h2>
 <h2>{{user.password}}</h2>
 
-<button ng-click="test()">test</button>
+<button ng-click="postUser()">test</button>
+<button ng-click="getAllUsers()">get all users</button>
 
-<h3>{{success}}</h3>
+<h3>{{success}}</h3><br>
+{{result}}
 </body>
 </html>

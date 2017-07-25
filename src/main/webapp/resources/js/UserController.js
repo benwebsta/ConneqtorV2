@@ -1,4 +1,4 @@
-app.controller("createNewUserController", 
+app.controller("UserController", 
 	['$scope', '$http',
 		 function($scope, $http) {
 			    var user = {
@@ -12,7 +12,7 @@ app.controller("createNewUserController",
 			    console.log(user);
 			    $scope.user = user;
 			    
-			    $scope.test = function(){
+			    $scope.postUser = function(){
 			    	console.log("in test");
 				    $http({
 				    	  method: 'POST',
@@ -26,8 +26,18 @@ app.controller("createNewUserController",
 				    		  $scope.success = false;
 				    	    console.log("error");
 				    	  });
-				    
-			    	
+			    }
+			    $scope.getAllUsers = function(){
+			    	console.log("in get");
+				    $http({
+				    	  method: 'GET',
+				    	  url: 'getAllUsers'
+				    	}).then(function successCallback(response) {
+				    	   $scope.result = response.data;
+				    	  }, function errorCallback(response) {
+				    		  $scope.success = false;
+				    	    console.log("error");
+				    	  });
 			    }
 		  
 	}]);
