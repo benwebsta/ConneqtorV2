@@ -1,4 +1,4 @@
-package com.conneqtor.beans;
+/*package com.conneqtor.beans;
 
 import java.util.Date;
 
@@ -73,4 +73,4 @@ public class Customer {
 
 	
 
-}
+}*/
