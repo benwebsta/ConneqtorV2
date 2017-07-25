@@ -2,10 +2,9 @@ app.controller("UserController",
 	['$scope', '$http',
 		 function($scope, $http) {
 			    var user = {
-			    		userId : 1,
-			    		firstName : "beeen", 
-			    		lastName : "webstee",
-			    		email : "test@test.com",
+			    		firstName : "beeen2", 
+			    		lastName : "webstee2",
+			    		email : "test2@test.com",
 			    		password : "password",
 			    		typeId : 2
 			    }
@@ -13,7 +12,7 @@ app.controller("UserController",
 			    $scope.user = user;
 			    
 			    $scope.postUser = function(){
-			    	console.log("in test");
+			    	console.log("in POST");
 				    $http({
 				    	  method: 'POST',
 				    	  url: 'createNewUser',
@@ -28,7 +27,7 @@ app.controller("UserController",
 				    	  });
 			    }
 			    $scope.getAllUsers = function(){
-			    	console.log("in get");
+			    	console.log("in GET");
 				    $http({
 				    	  method: 'GET',
 				    	  url: 'getAllUsers'

@@ -25,7 +25,7 @@ public class UserRestController {
 
 	@RequestMapping(method=RequestMethod.POST, value="/createNewUser")
 	public @ResponseBody Boolean createNewUser_JSON(@RequestBody String newUserJson, HttpSession session, ModelMap modelMap){
-		System.out.println("rest controller hit");
+		System.out.println("POST rest controller hit");
 		System.out.println(newUserJson);
 
 		Gson gson = new Gson();
